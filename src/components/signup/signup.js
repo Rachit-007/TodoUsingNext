@@ -16,10 +16,7 @@ export const Signup = () => {
     router,
   } = useSignup();
 
-  
-
   return (
-
     <section className="text-gray-600 body-font">
       <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col m-auto w-full  md:mt-0">
         <h2 className="text-gray-900 text-2xl font-medium title-font mb-5">
