@@ -16,6 +16,12 @@ export const Signup = () => {
     router,
   } = useSignup();
 
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push(path.root);
+    }
+  }, [status]);
+
   return (
     <section className="text-gray-600 body-font">
       <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col m-auto w-full  md:mt-0">

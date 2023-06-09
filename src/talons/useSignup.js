@@ -17,9 +17,7 @@ const useSignup = () => {
     resolver: yupResolver(singupSchema),
   });
   const router = useRouter();
-
- 
-
+  const { data: session, status } = useSession();
   const onsubmit = async (newData) => {
     try {
       let { data } = await axios.post("/api/user/signup", newData);
