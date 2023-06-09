@@ -23,7 +23,7 @@ export const Todo = () => {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3">
               {taskList.map((task) => (
-                <TaskListItem task={task} key={task.id} />
+                <TaskListItem task={task} key={task._id} />
               ))}
             </div>
           </div>
