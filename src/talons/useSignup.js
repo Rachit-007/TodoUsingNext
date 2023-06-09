@@ -18,7 +18,7 @@ const useSignup = () => {
   });
   const router = useRouter();
 
-  const { data: session, status } = useSession();
+ 
 
   const onsubmit = async (newData) => {
     try {

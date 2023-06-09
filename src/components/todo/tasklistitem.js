@@ -24,7 +24,7 @@ const TaskListItem = ({ task }) => {
               <div className="relative pb-3 ps-1">
                 <select
                   className="appearance-none rounded border border-gray-700 bg-transparent py-2 pl-3 pr-10 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                  defaultValue={task.completed}
+                  value={task.completed}
                   onChange={(e) => {
                     handleChange(e);
                   }}
