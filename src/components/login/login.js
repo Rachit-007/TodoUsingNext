@@ -1,10 +1,8 @@
 import { path } from "@constants/index";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
 import useLogin from "src/talons/useLogin";
 import { ErrorMessage } from "@hookform/error-message";
+import { useEffect } from "react";
 
 export const Login = () => {
   const {
@@ -14,7 +12,15 @@ export const Login = () => {
     register,
     handleSubmit,
     errors,
+    router,
+    status,
   } = useLogin();
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push(path.root);
+    }
+  }, [status]);
 
   return (
     <section className="text-gray-600 body-font">

@@ -1,6 +1,7 @@
 import { path } from "@constants/index";
 import { ErrorMessage } from "@hookform/error-message";
 import Link from "next/link";
+import { useEffect } from "react";
 import useSignup from "src/talons/useSignup";
 
 export const Signup = () => {
@@ -11,7 +12,15 @@ export const Signup = () => {
     register,
     handleSubmit,
     errors,
+    status,
+    router,
   } = useSignup();
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push(path.root);
+    }
+  }, [status]);
 
   return (
     <section className="text-gray-600 body-font">

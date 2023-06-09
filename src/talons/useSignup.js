@@ -1,7 +1,7 @@
 import { path } from "@constants/index";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
@@ -16,7 +16,9 @@ const useSignup = () => {
   } = useForm({
     resolver: yupResolver(singupSchema),
   });
-  const router = useRouter;
+  const router = useRouter();
+
+  const { data: session, status } = useSession();
 
   const onsubmit = async (newData) => {
     try {
@@ -47,6 +49,8 @@ const useSignup = () => {
     register,
     handleSubmit,
     errors,
+    status,
+    router,
   };
 };
 

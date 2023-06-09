@@ -1,5 +1,5 @@
 import { path } from "@constants/index";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -14,6 +14,7 @@ const useLogin = () => {
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
+  const { data: session, status } = useSession();
   const router = useRouter();
 
   const handleGithubSignin = () => {
@@ -53,6 +54,9 @@ const useLogin = () => {
     register,
     handleSubmit,
     errors,
+    session,
+    router,
+    status,
   };
 };
 
