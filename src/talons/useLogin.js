@@ -28,7 +28,6 @@ const useLogin = () => {
   const handleGoogleSignin = () => {
     try {
       signIn("google", { callbackUrl: "http://localhost:3000" });
-
       toast.success("Login successful");
     } catch (err) {
       console.log(err);

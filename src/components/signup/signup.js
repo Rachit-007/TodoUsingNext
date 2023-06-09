@@ -74,11 +74,18 @@ export const Signup = () => {
               )}
             ></ErrorMessage>
           </div>
-
-          <div className="relative flex items-center justify-center w-full my-2 border border-t">
-            <div className="absolute px-5 bg-gray-100 font-semibold">OR</div>
+          <button
+            type="submit"
+            className="text-white bg-indigo-500 border-0 py-2 mt-5 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg w-full"
+          >
+            Signup
+          </button>
+        </form>
+        <div className="mt-2">
+          <div className="relative flex items-center justify-center w-full my-3 border border-t">
+            <div className="absolute px-5 bg-gray-100 font-semibold ">OR</div>
           </div>
-          <div className="flex mt-4 gap-x-2">
+          <div className="flex mt-5 gap-x-2">
             <button
               onClick={() => handleGoogleSignin()}
               type="button"
@@ -107,13 +114,7 @@ export const Signup = () => {
               <p className="px-2">GitHub</p>
             </button>
           </div>
-          <button
-            type="submit"
-            className="text-white bg-indigo-500 border-0 py-2 mt-5 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg w-full"
-          >
-            Signup
-          </button>
-        </form>
+        </div>
         <p className="text-s text-gray-500 mt-3 ">
           Already have an account ,{" "}
           <Link href={path.login} className="text-gray-800">
