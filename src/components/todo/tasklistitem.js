@@ -25,6 +25,7 @@ const TaskListItem = ({ task }) => {
                 <select
                   className="appearance-none rounded border border-gray-700 bg-transparent py-2 pl-3 pr-10 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
                   value={task.completed}
+                  defaultChecked={task.completed}
                   onChange={(e) => {
                     handleChange(e);
                   }}
